@@ -10,23 +10,40 @@ Assessment Requirements
 
 // create a variable to hold your NFT's
 
+const nfts = {
+    count: 0,
+    owners: []
+}
+
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT () {
-
+function mintNFT(name) {
+    console.log("Minting NFT: " + name)
+    nfts.count += 1
+    nfts.owners.push(name)
 }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
-function listNFTs () {
+function listNFTs() {
+    console.log("Owners:")
+    nfts.owners.forEach(n => {
+        console.log(n)
+    })
 
 }
 
 // print the total number of NFTs we have minted to the console
 function getTotalSupply() {
-
+    console.log(`Total Supply: ${nfts.count}`)
 }
 
 // call your functions below this line
 
+getTotalSupply()
+mintNFT("Ankush")
+mintNFT("Pikachu")
+mintNFT("Bulbasaur")
+getTotalSupply()
+listNFTs()
