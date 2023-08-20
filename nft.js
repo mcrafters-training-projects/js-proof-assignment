@@ -18,10 +18,10 @@ const nfts = {
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT(name) {
+function mintNFT(name, number) {
     console.log("Minting NFT: " + name)
     nfts.count += 1
-    nfts.owners.push(name)
+    nfts.owners.push({ name, number })
 }
 
 // create a "loop" that will go through an "array" of NFT's
@@ -29,7 +29,7 @@ function mintNFT(name) {
 function listNFTs() {
     console.log("Owners:")
     nfts.owners.forEach(n => {
-        console.log(n)
+        console.log(`name: ${n.name}, number: ${n.number}`)
     })
 
 }
@@ -42,8 +42,12 @@ function getTotalSupply() {
 // call your functions below this line
 
 getTotalSupply()
-mintNFT("Ankush")
-mintNFT("Pikachu")
-mintNFT("Bulbasaur")
+
+mintNFT("Ankush", 10002)
+mintNFT("Pikachu", 934785)
+mintNFT("Bulbasaur", 7892354)
+mintNFT("Jigglypuff", 278934)
+
 getTotalSupply()
+
 listNFTs()
